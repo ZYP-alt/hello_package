@@ -25,7 +25,6 @@ dev = [
   "isort>=5.14.0",
   "flake8==6.1.0",
   "pytest==8.4.0",
-  "pytest-httpx==0.26.0",
   "build>=0.10.0",
   "twine>=4.0.0",
 ]

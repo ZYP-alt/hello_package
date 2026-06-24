@@ -2,7 +2,6 @@ from fastapi.testclient import TestClient
 
 from hello_package.server import app
 
-
 client = TestClient(app)
 
 

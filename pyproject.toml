@@ -1,0 +1,45 @@
+[project]
+name = "hello-package"
+version = "0.1.0"
+description = "A minimal hello package with CI/CD, code style checks, automated tests, and package publishing."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "black==24.3.0",
+  "isort==5.14.0",
+  "flake8==6.1.0",
+  "pytest==8.4.0",
+  "build>=0.10.0",
+  "twine>=4.0.0",
+]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [".git", "__pycache__", "build", "dist", ".venv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=65.0", "wheel", "build"]
+build-backend = "setuptools.build_meta"

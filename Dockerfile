@@ -10,8 +10,8 @@ COPY . .
 # 安装项目依赖（生产环境，不安装 dev 依赖）
 RUN pip install --no-cache-dir .
 
-# 暴露端口（如果项目有 Web 服务）
-# EXPOSE 8000
+# 暴露端口（Web 服务使用）
+EXPOSE 8000
 
-# 容器启动时执行的命令
-CMD ["python", "-m", "hello_package"]
+# 容器启动时执行 HTTP 服务
+CMD ["uvicorn", "hello_package.server:app", "--host", "0.0.0.0", "--port", "8000"]
